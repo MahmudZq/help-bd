@@ -13,26 +13,37 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- css  -->
      <link rel="stylesheet" href="./styles/main.css">
-     <style>
-        .font-lexend {
-                        font-family: "Lexend", serif;
-                        font-optical-sizing: auto;
-                     }
-     </style>
+     <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#111111',
+                        secondary: 'rgba(17, 17, 17, 0.7)',
+                        btnColor: '#B4F461',
+                        amount: 'rgba(17, 17, 17, 0.05)',
+                        background: 'rgba(253, 241, 216, 0.3)',
+                    },
+                    fontFamily: {
+                        Lexend: 'Lexend'
+                    }
+                }
+            }
+        }
+    </script>
 
     <title>Donate Bangladesh</title>
 
 </head>
 <body>
 
-<header class="header sticky top-0 font-lexend container mx-auto">
+<header class="sticky bg-foster top-0 font-lexend container mx-auto">
  
-        <div class="navbar  bg-[#F9F7F3] flex justify-between py-4 px-6">
+        <div class="navbar hidden lg:flex  bg-background  justify-between py-4 px-6">
 
-        <button class="blog-btn btn bg-[#B4F461] text-[#111111] text-2xl font-semibold border-none ">
+        <button class="blog-btn btn bg-btnColor text-[#111111] text-2xl font-semibold border-none ">
             Blog
         </button>
-
        
         <div class="center flex gap-3 items-center">
             <img src="./assets/logo.png" alt="">
@@ -42,20 +53,127 @@
             <img src="./assets/coin.png" alt="coin-logo">
             <div class="text-2xl text-[#111111] opacity-70">10000 BDT</div>
         </div>
-    </div>
+        </div>
+
+
+        <div class="navbar flex flex-col space-y-3 lg:hidden  bg-background py-4 px-6">
+
+            <div class=" flex space-x-3 mx-auto items-center">
+                <img src="./assets/logo.png" alt="">
+                <h2 class="font-semibold text-[#111111] text-2xl">Donate Bangladesh</h2>
+            </div>
+            <div class="flex justify-between w-full py-4 px-2">
+                    <button class="blog-btn btn bg-btnColor text-[#111111] text-2xl font-semibold border-none ">
+                        Blog
+                    </button>
+                
+                
+                    <div class="flex gap-3">
+                        <img src="./assets/coin.png" alt="coin-logo">
+                        <div class="text-2xl text-[#111111] opacity-70">10000 BDT</div>
+                    </div>
+            </div>
+            </div>
+
+
+
+    <div class="flex gap-8 justify-center p-4 lg:p-12">
+        <!-- padding issue -->
+        <button class="btn bg-btnColor text-[#111111] text-lg font-semibold ">  
+            Donation
+        </button>
+        <!-- padding issue -->
+        <button class="btn bg-none  text-[#111111]  text-lg  font-semibold ">  
+            History
+        </button>
+    </div> 
 
 </header>
 
-    <main class="font-lexend container mx-auto ">
-        <div class="flex flex-col gap-8 mt-10">
+    <main class="font-lexend container mx-auto mb-24">
+
+        <div class="flex flex-col space-y-8 mt-10 ">
 
         
-            <div class="box w-full h-[400px] bg-slate-600 "></div>
-            <div class="box w-full h-[400px] bg-slate-600 "></div>
-            <div class="box w-full h-[400px] bg-slate-600 "></div>
-        
-        
-        
+            <div class="w-full grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-5 bg-base-100 rounded-xl border-2 shadow-xl ">
+                    <div class="xl:col-span-2 mx-auto lg:mx-0 ">               
+                          <img src="./assets/noakhali.png" alt="noakhali flood" class="p-4  rounded-3xl" />
+                    </div>
+
+                    <div class="card-data p-4 xl:col-span-3 space-y-8 ">
+                        <button class="btn bg-neutral-200 w-fit px-8 flex flex-row gap-3">
+                            <img src="./assets/coin.png" alt=""/> 1800 BDT
+                        </button>
+                    <h2 class="card-title">Donate for Flood at Noakhali, Bangladesh</h2>
+                    <p>  The recent floods in Noakhali have caused significant damage to homes  infrastructure.
+                        Your donation will help provide essential supplies and  to those affected by this disaster.
+                        Every contribution, big or small, makes  difference.
+                        Please join us in supporting the relief efforts and making a positive impact on the lives of those in need.
+                    </p>
+                    
+                    <div>
+                        <input type="text" placeholder="Write Donation Amount" class="input input-bordered w-full" />
+                    </div>
+                    <button class="btn bg-btnColor w-full font-semibold text-2xl ">
+                        Donate Now
+                    </button>
+                    </div> 
+           </div>
+
+
+           <div class="w-full grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-5 bg-base-100 rounded-xl border-2 shadow-xl ">
+            <div class="xl:col-span-2 mx-auto lg:mx-0 ">               
+                  <img src="./assets/feni.png" alt="noakhali flood" class="p-4  rounded-3xl" />
+            </div>
+
+            <div class="card-data p-4 xl:col-span-3 space-y-8 ">
+                <button class="btn bg-neutral-200 w-fit px-8 flex flex-row gap-3">
+                    <img src="./assets/coin.png" alt=""/> 2300 BDT
+                </button>
+            <h2 class="card-title">Donate for Flood Relief in Feni,Bangladesh</h2>
+            <p> The recent floods in Feni have devastated local communities, leading to severe disruption and loss. 
+                Your generous donation will help provide immediate aid, including food, clean water, and medical supplies, to those affected by this calamity. 
+                Together, we can offer crucial support and help rebuild lives in the aftermath of this disaster. 
+                Every contribution counts towards making a real difference. Please consider donating today to assist those in urgent need.
+            </p>
+            
+            <div>
+                <input type="text" placeholder="Write Donation Amount" class="input input-bordered w-full" />
+            </div>
+            <button class="btn bg-btnColor w-full font-semibold text-2xl ">
+                Donate Now
+            </button>
+            </div> 
+            </div>
+
+
+            <div class="w-full grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-5 bg-base-100 rounded-xl border-2 shadow-xl ">
+                <div class="xl:col-span-2 mx-auto lg:mx-0 ">               
+                      <img src="./assets/july-36-injured.jpg" alt="noakhali flood" class="p-4  rounded-3xl" />
+                </div>
+
+                <div class="card-data p-4 xl:col-span-3 space-y-8 ">
+                    <button class="btn bg-neutral-200 w-fit px-8 flex flex-row gap-3">
+                        <img src="./assets/coin.png" alt=""/> 3800 BDT
+                    </button>
+                <h2 class="card-title">Aid for Injured in the July Uprising of 2024</h2>
+                <p> The recent July Uprising has resulted in numerous injuries and significant hardship for many individuals. 
+                    Your support is crucial in providing medical assistance, rehabilitation, and necessary supplies to those affected. 
+                    By contributing, you help ensure that injured individuals receive the care and support they need during this challenging time. 
+                    Every donation plays a vital role in alleviating their suffering and aiding in their recovery. 
+                    Please consider making a donation to support these brave individuals in their time of need.
+                </p>
+                
+                <div>
+                    <input type="text" placeholder="Write Donation Amount" class="input input-bordered w-full" />
+                </div>
+                <button class="btn bg-btnColor w-full font-semibold text-2xl ">
+                    Donate Now
+                </button>
+                </div> 
+            </div>
+
+
         
         </div>
 
