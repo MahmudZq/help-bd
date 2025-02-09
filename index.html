@@ -41,63 +41,41 @@
 
 <header class="sticky bg-foster top-0 font-lexend container mx-auto">
  
-        <div class="navbar hidden lg:flex  bg-background  justify-between py-4 px-6">
-
-                <button class="blog-btn btn bg-btnColor text-[#111111] text-2xl font-semibold border-none ">
-                    Blog
-                </button>
-       
-                <div class="center flex gap-3 items-center">
+        <div class="navbar grid grid-cols-2 lg:grid-cols-3 bg-background  justify-between py-4 px-6">
+                <div>
+                <button id="nav-toggle" class="blog-btn btn bg-btnColor text-[#111111] text-2xl font-semibold border-none ">Blog</button>
+                </div>
+                <div class="center flex gap-3 items-center justify-center">
                      <img src="./assets/logo.png" alt="">
-                     <h2 class="font-semibold text-[#111111] text-2xl">Donate Bangladesh</h2>
+                     <h2 class="font-semibold text-[#111111] text-2xl hidden lg:flex">Donate Bangladesh</h2>
                 </div>
 
-                <div class="flex gap-3">
+                <div class="flex gap-3 justify-center col-span-2 lg:col-span-1 mt-6 lg:mt-0">
+                      <div class="lg:hidden text-xl pr-3">Balance:</div>
                       <img src="./assets/coin.png" alt="coin-logo">
-                      <div class="text-2xl text-[#111111] opacity-70">10000 BDT</div>
+                      <div class="text-xl lg:text-2xl text-[#111111] opacity-70"><span id="balance">10000</span> BDT</div>
                 </div>
         </div>
 
 
-        <div class="navbar lg:hidden  flex flex-col space-y-3  bg-background py-4 px-6">
-
-                    <div class=" flex space-x-3 mx-auto items-center">
-
-                        <img src="./assets/logo.png" alt="">
-                        <h2 class="font-semibold text-[#111111] text-2xl">Donate Bangladesh</h2>
-
-                    </div>
-
-                    <div class="flex justify-between w-full py-4 px-2">
-
-                            <button class="blog-btn btn bg-btnColor text-[#111111] text-2xl font-semibold border-none ">
-                                Blog
-                            </button>
-
-                            <div class="flex gap-3">
-                                <img src="./assets/coin.png" alt="coin-logo">
-                                <div class="text-2xl text-[#111111] opacity-70">10000 BDT</div>
-                            </div>
-                    </div>
-
-        </div>
-
-
-
+    <section id="header-data" class="">
     <div class="flex gap-8 justify-center p-4 lg:p-12">
         <!-- padding issue -->
-        <button class="btn bg-btnColor text-[#111111] text-lg font-semibold ">  
+        <button id="donation-btn" class="btn bg-btnColor text-[#111111] text-lg font-semibold ">  
             Donation
         </button>
         <!-- padding issue -->
-        <button class="btn bg-none  text-[#111111]  text-lg  font-semibold ">  
+        <button id="history-btn" class="btn bg-none  text-[#111111]  text-lg  font-semibold ">  
             History
         </button>
     </div> 
+    </section>
 
 </header>
 
     <main class="font-lexend container mx-auto mb-24">
+    
+    <section id="donate-options" class="">
 
         <div class="flex flex-col space-y-8 mt-10 ">
 
@@ -108,10 +86,10 @@
                     </div>
 
                     <div class="card-data p-4 xl:col-span-3 space-y-8 ">
-                        <button class="btn bg-neutral-200 w-fit px-8 flex flex-row gap-3">
-                            <img src="./assets/coin.png" alt=""/> 1800 BDT
+                        <button class="btn bg-neutral-200 text-xl font-normal w-fit px-8 flex flex-row gap-3">
+                            <img src="./assets/coin.png" alt=""/><span id="noakhali-total-donate" >1800</span> BDT
                         </button>
-                    <h2 class="card-title">Donate for Flood at Noakhali, Bangladesh</h2>
+                    <h2 class="card-title">Donate for <span id="noakhaliTitle" >Flood at Noakhali, Bangladesh</span></h2>
                     <p>  The recent floods in Noakhali have caused significant damage to homes  infrastructure.
                         Your donation will help provide essential supplies and  to those affected by this disaster.
                         Every contribution, big or small, makes  difference.
@@ -119,9 +97,9 @@
                     </p>
                     
                     <div>
-                        <input type="text" placeholder="Write Donation Amount" class="input input-bordered w-full" />
+                        <input type="number" id="noakhali-donate-amount" placeholder="Write Donation Amount" class="input input-bordered w-full" />
                     </div>
-                    <button class="btn bg-btnColor w-full font-semibold text-2xl ">
+                    <button id="noakhali-donate-btn" class="btn bg-btnColor w-full font-semibold text-2xl" >
                         Donate Now
                     </button>
                     </div> 
@@ -134,10 +112,10 @@
             </div>
 
             <div class="card-data p-4 xl:col-span-3 space-y-8 ">
-                <button class="btn bg-neutral-200 w-fit px-8 flex flex-row gap-3">
-                    <img src="./assets/coin.png" alt=""/> 2300 BDT
+                <button class="btn bg-neutral-200 text-xl font-normal  w-fit px-8 flex flex-row gap-3">
+                    <img src="./assets/coin.png" alt=""/><span id="feni-total-donate" >2300</span> BDT
                 </button>
-            <h2 class="card-title">Donate for Flood Relief in Feni,Bangladesh</h2>
+            <h2  class="card-title">Donate for <span id="feniTitle" >Flood Relief in Feni, Bangladesh</span></h2>
             <p> The recent floods in Feni have devastated local communities, leading to severe disruption and loss. 
                 Your generous donation will help provide immediate aid, including food, clean water, and medical supplies, to those affected by this calamity. 
                 Together, we can offer crucial support and help rebuild lives in the aftermath of this disaster. 
@@ -145,9 +123,9 @@
             </p>
             
             <div>
-                <input type="text" placeholder="Write Donation Amount" class="input input-bordered w-full" />
+                <input type="text" id="feni-donate-amount" placeholder="Write Donation Amount" class="input input-bordered w-full" />
             </div>
-            <button class="btn bg-btnColor w-full font-semibold text-2xl ">
+            <button id="feni-donate-btn"  class="btn bg-btnColor w-full font-semibold text-2xl ">
                 Donate Now
             </button>
             </div> 
@@ -156,14 +134,14 @@
 
             <div class="w-full grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-5 bg-base-100 rounded-xl border-2 shadow-xl ">
                 <div class="xl:col-span-2 mx-auto lg:mx-0 ">               
-                      <img src="./assets/july-36-injured.jpg" alt="noakhali flood" class="p-4  rounded-3xl" />
+                      <img src="./assets/july-36-injured.jpg" alt="july uprising injured" class="p-4  rounded-3xl" />
                 </div>
 
                 <div class="card-data p-4 xl:col-span-3 space-y-8 ">
-                    <button class="btn bg-neutral-200 w-fit px-8 flex flex-row gap-3">
-                        <img src="./assets/coin.png" alt=""/> 3800 BDT
+                    <button class="btn bg-neutral-200 text-xl font-normal  w-fit px-8 flex flex-row gap-3">
+                        <img src="./assets/coin.png" alt=""/><span id="july-total-donate" >3100</span> BDT
                     </button>
-                <h2 class="card-title">Aid for Injured in the July Uprising of 2024</h2>
+                <h2  class="card-title">Aid for <span id="julyTitle" >Injured in the July Uprising of 2024</span></h2>
                 <p> The recent July Uprising has resulted in numerous injuries and significant hardship for many individuals. 
                     Your support is crucial in providing medical assistance, rehabilitation, and necessary supplies to those affected. 
                     By contributing, you help ensure that injured individuals receive the care and support they need during this challenging time. 
@@ -172,9 +150,9 @@
                 </p>
                 
                 <div>
-                    <input type="text" placeholder="Write Donation Amount" class="input input-bordered w-full" />
+                    <input type="text" id="july-donate-amount" placeholder="Write Donation Amount" class="input input-bordered w-full" />
                 </div>
-                <button class="btn bg-btnColor w-full font-semibold text-2xl ">
+                <button id="july-donate-btn" class="btn bg-btnColor w-full font-semibold text-2xl ">
                     Donate Now
                 </button>
                 </div> 
@@ -184,11 +162,125 @@
         
         </div>
 
+        <!-- Modal  -->
+         <!-- Open the modal using ID.showModal() method -->
+                   
+                    <dialog id="my_modal" class="modal modal-bottom sm:modal-middle">
+                        <div class="modal-box space-y-6">
+                            <h3 class="text-3xl font-bold text-center">Congrates!</h3>
+                            <div class="text-xl flex gap-4 justify-center">
+                            <img src="./assets/coin.png" alt="coing">
+                            <p><span id="modal-amount">0</span> BDT</p>
+                            </div>
+                            <p class="pt-4 text-lg text-[#111111] opacity-80 text-center">You have donated for humankind</p>
+                            <h2 class="text-center font-bold text-2xl">Successfully</h2>
+                            <div class="modal-action">
+                            <form method="dialog" class="w-full flex justify-center ">
+                              
+                                <button class="btn">Close Confirmation</button>
+                            </form>
+                            </div>
+                        </div>
+                        </dialog>
+        <!-- Modal - 1  -->
+         <!-- Open the modal using ID.showModal() method -->
+<!--                     
+                    <dialog id="my_modal_1" class="modal modal-bottom sm:modal-middle">
+                        <div class="modal-box space-y-6">
+                           
+                            <div class="text-xl flex gap-4 justify-center">
+                            <img src="./assets/coin.png" alt="coing">
+                            <h3 class="text-3xl font-bold text-center">Invalid Amount</h3>
+                            </div>
+                            <p class="pt-4 text-lg text-[#111111] opacity-80 text-center">Please try again with a valid amount </p>
+                            <div class="modal-action">
+                            <form method="dialog" class="w-full flex justify-center ">
+                                
+                                <button class="btn">Close Confirmation</button>
+                            </form>
+                            </div>
+                        </div>
+                        </dialog> -->
+        <!-- Modal -2  -->
+         <!-- Open the modal using ID.showModal() method -->
+                    
+                    <dialog id="my_modal_2" class="modal modal-bottom sm:modal-middle">
+                        <div class="modal-box space-y-6">
+                           
+                            <div class="text-xl flex gap-4 justify-center">
+                            <img src="./assets/coin.png" alt="coing">
+                            <h3 class="text-3xl font-bold text-center">Insufficient Balance</h3>
+                            </div>
+                            <p class="pt-4 text-lg text-[#111111] opacity-80 text-center">Please try again with amount less than <span id="insufficient">0</span> BDT</p>
+                            <div class="modal-action">
+                            <form method="dialog" class="w-full flex justify-center ">
+                               
+                                <button class="btn">Close Confirmation</button>
+                            </form>
+                            </div>
+                        </div>
+                        </dialog>
+    </section>
+    <section id="history" class="hidden">
+        <h1 class="text-3xl text-center">Donation History</h1>
 
+        <div id="transaction-history">
+
+            <div id="no-donation" class="w-full border-2 p-4 text-2xl mt-4 rounded-lg shadow-sm font-semibold text-[#111111] text-center">
+                <span class="text-xl text-[#ff0000]">No Donation Provided</span> 
+            </div>
+
+            
+
+
+        </div>
+        <div id="no-donation" class="w-full h-[100px] mt-48 bg-background border-2 rounded-b-xl "></div>
+    </section>
+
+    <section id="blog" class="hidden">
+        <div class="space-y-5">
+    <h1 class="text-3xl">FAQ</h1> <br>
+
+        <div class=" collapse collapse-arrow bg-base-200">
+            <input type="radio" name="my-accordion-2" checked="checked" />
+            <div class="collapse-title text-xl font-medium">How can I donate to help flood victims in Noakhali and Feni?</div>
+            <div class="collapse-content">
+              <p>You can donate directly through our website using various payment methods such as mobile banking, credit card, or bank transfer. 
+                Every contribution, big or small, helps provide essential aid such as food, shelter, and medical supplies to the affected communities in Noakhali and Feni.</p>
+            </div>
+          </div>
+          <div class="collapse collapse-arrow bg-base-200">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title text-xl font-medium">What type of assistance is being provided to the flood victims?</div>
+            <div class="collapse-content">
+              <p>Donations are being used to provide immediate relief such as food, clean water, medicines, shelter, and basic necessities to those affected by the floods in Noakhali and Feni. 
+                We are also working to support long-term recovery efforts, such as rebuilding homes and providing financial assistance to families who have lost their livelihoods.</p>
+            </div>
+          </div>
+          <div class="collapse collapse-arrow bg-base-200">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title text-xl font-medium">How will my donation help the injured people from the July 2024 uprising?</div>
+            <div class="collapse-content">
+              <p>Your donation will directly support medical treatment, rehabilitation, and psychological support for individuals injured during the July 2024 uprising in Bangladesh. 
+                We are working with hospitals, health clinics, and local organizations to ensure victims receive the care they need.</p>
+            </div>
+          </div>
+          <div class="collapse collapse-arrow bg-base-200">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title text-xl font-medium">What can I do to help people suffering from the winter in Bangladesh?</div>
+            <div class="collapse-content">
+              <p>Donations are being used to provide warm clothing, blankets, food, and shelter to vulnerable communities suffering from the harsh winter conditions. 
+                Your contributions will help ensure that those in need are protected from the extreme cold, especially in rural areas where winter hardships are most severe.</p>
+            </div>
+          </div>
+        </div>
+    </section>
     </main>
+    <script>
     
-    <script src="./js/index.js">
     </script>
+    <script src="./js/functions.js"></script>
+    <script src="./js/index.js"></script>
 
 </body>
 </html>
