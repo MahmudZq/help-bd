@@ -9,7 +9,8 @@
     <!-- google fonts  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100..900;1,100..900&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+
     <!-- daisy ui & tailwind  -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
@@ -221,6 +222,7 @@
                         </div>
                         </dialog>
     </section>
+
     <section id="history" class="hidden">
         <h1 class="text-3xl text-center">Donation History</h1>
 
@@ -275,10 +277,29 @@
           </div>
         </div>
     </section>
+
     </main>
-    <script>
-    
-    </script>
+    <footer>
+        <section class="container grid grid-cols-1 md:grid-cols-2 gap-4 py-6 px-6 items-center rounded-b-lg w-full bg-[#dddddd] mx-auto">
+
+            <div class="font-azeret-mono font-semibold text-2xl text-[#000000] flex justify-center md:justify-start">
+                <h3>Mahmud Rayhan</h3>
+            </div>
+
+            <div class="flex justify-center md:justify-end items-center space-x-4">
+                <a href="https://twitter.com/MahmudZq">
+                    <img src="./assets/twitter.png" alt="link to twitter" class="w-12 hover:scale-125">
+                </a>
+                <a href="https://github.com/MahmudZq/">
+                    <img src="./assets/github.png" alt="link to github profile" class="w-10 hover:scale-125">
+                </a>
+                <a href="https://www.linkedin.com/in/mahmudrayhan/">
+                    <img src="./assets/linkedin.png" alt="link to linkedin profile" class="w-10 hover:scale-125">
+                </a>
+            </div>
+        </section>
+    </footer>
+
     <script src="./js/functions.js"></script>
     <script src="./js/index.js"></script>
 
